@@ -61,7 +61,11 @@ const session = computed(() => {
 const linksList = computed(() => {
 
   const linksList = [
-    ///
+
+    {
+      title: 'Users',
+      route: '/lists/users',
+    }
   ];
 
 
