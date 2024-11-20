@@ -7,7 +7,8 @@ export default class User extends MyBaseModel {
   static primaryKey = 'id';
   static entityHumanName = 'User';
   static titleKey = 'name';
-  static openRecord(pVal, item, router){
+
+  static openRecord(pVal, item, router) {
     router.push({
       name: '/lists/users/:rId/:rName',
       params: {
@@ -17,8 +18,7 @@ export default class User extends MyBaseModel {
     })
   }
 
-  static parentWithables = [
-  ];
+  static parentWithables = [];
 
   static rules = {
     readables: () => true,
@@ -40,22 +40,23 @@ export default class User extends MyBaseModel {
     // 'status': {},
     // 'remember_token': {},
 
-        'created_at': {
-          autoFill(item){
-            if (item.created_at){
-              return item.created_at
-            } else {
-              const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
-              return currentTimestamp
-            }
-          },
-        },
-        'updated_at': {
-          autoFill(item){
-            const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
-            return currentTimestamp
-          }
-        },
+    'created_at': {
+      autoFill(item) {
+        if (item.created_at) {
+          return item.created_at
+        } else {
+          const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+          return currentTimestamp
+        }
+      },
+    },
+    'updated_at': {
+      autoFill(item) {
+        const currentTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        return currentTimestamp
+      }
+    },
+    
   };
 
   static fields() {
@@ -81,7 +82,12 @@ export default class User extends MyBaseModel {
     // Define templateOverview
   };
 
-  static FetchAll(relationships = [], flags = {}, moreHeaders = {}, options = { page: 1, limit: 15, filters: {}, clearPrimaryModelOnly: false }) {
+  static FetchAll(relationships = [], flags = {}, moreHeaders = {}, options = {
+    page: 1,
+    limit: 15,
+    filters: {},
+    clearPrimaryModelOnly: false
+  }) {
     return this.customSupabaseApiFetchAll(
       `${this.baseUrl}${this.entityUrl}`,
       [...this.parentWithables, ...relationships],
