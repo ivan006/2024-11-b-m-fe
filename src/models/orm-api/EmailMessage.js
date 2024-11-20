@@ -1,15 +1,15 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
-import User from "src/models/User";
+import User from 'src/models/User';
 
-export default class Mail extends MyBaseModel {
-    static entity = 'mail';
-    static entityUrl = '/api/mails';
+export default class EmailMessage extends MyBaseModel {
+    static entity = 'emailmessage';
+    static entityUrl = '/api/email-messages';
     static primaryKey = 'id';
     static titleKey = 'id';
-    static entityHumanName = 'Mail';
+    static entityHumanName = 'EmailMessage';
     static openRecord(pVal, item, router){
       router.push({
-        name: '/lists/mails/:rId/:rName',
+        name: '/lists/email-messages/:rId/:rName',
         params: {
           rId: pVal,
           rName: pVal,

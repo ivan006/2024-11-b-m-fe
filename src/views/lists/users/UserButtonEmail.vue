@@ -19,7 +19,7 @@
 
 <script>
 import { SuperTable } from 'wizweb-fe'
-import Mail from 'src/models/orm-api/Mail'
+import EmailMessage from 'src/models/orm-api/EmailMessage'
 export default {
   name: "EventButtonAttend",
   components: {
@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      model: Mail
+      model: EmailMessage
     }
   },
   props: {

@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        <mailList
+        <emailMessageList
             :parentKeyValuePair="parentKeyValuePair"
             :fetchFlags="fetchFlags"
         />
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import mailList from 'src/views/lists/mails/MailList.vue'
+import emailMessageList from 'src/views/lists/email-messages/EmailMessageList.vue'
 
 export default {
-    name: 'Mail-list-controller',
+    name: 'EmailMessage-list-controller',
     components: {
-        mailList,
+        emailMessageList,
     },
 
     data() {

@@ -2,18 +2,18 @@
 
     <div>
         <q-card class="q-mb-md">
-            <mailRead :id="id" />
+            <emailMessageRead :id="id" />
         </q-card>
     </div>
 </template>
 
 <script>
-import mailRead from 'src/views/lists/mails/MailRead.vue'
+import emailMessageRead from 'src/views/lists/email-messages/EmailMessageRead.vue'
 
 export default {
-    name: 'Mail-read-controller',
+    name: 'EmailMessage-read-controller',
     components: {
-        mailRead,
+        emailMessageRead,
     },
 
     data() {

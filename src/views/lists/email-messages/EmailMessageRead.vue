@@ -10,14 +10,14 @@
 
 <script>
 import { SuperRecord } from 'wizweb-fe'
-import Mail from 'src/models/orm-api/Mail'
+import EmailMessage from 'src/models/orm-api/EmailMessage'
 
 export default {
-    name: 'Mail-read',
+    name: 'EmailMessage-read',
     components: { SuperRecord },
     computed: {
         superRecordModel() {
-            return Mail
+            return EmailMessage
         },
     },
 }

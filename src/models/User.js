@@ -1,6 +1,6 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import VueCookies from 'vue-cookies';
-import Mail from "src/models/orm-api/Mail";
+import EmailMessage from "src/models/orm-api/EmailMessage";
 
 export default class User extends MyBaseModel {
   static entity = 'user';
@@ -82,7 +82,7 @@ export default class User extends MyBaseModel {
       'profile_photo': this.attr('').nullable(),
       'created_at': this.attr('').nullable(),
       'updated_at': this.attr('').nullable(),
-      'mails': this.hasMany(Mail, 'recipient_id')
+      'mails': this.hasMany(EmailMessage, 'recipient_id')
     };
   }
 

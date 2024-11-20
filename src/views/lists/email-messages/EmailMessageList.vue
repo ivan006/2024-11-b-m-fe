@@ -12,10 +12,10 @@
 
 <script>
 import { SuperTable } from 'wizweb-fe'
-import Mail from 'src/models/orm-api/Mail'
+import EmailMessage from 'src/models/orm-api/EmailMessage'
 
 export default {
-    name: 'Mail-list',
+    name: 'EmailMessage-list',
     components: {
         SuperTable,
     },
@@ -39,13 +39,13 @@ export default {
 
     computed: {
         superTableModel() {
-            return Mail
+            return EmailMessage
         },
     },
     methods: {
         openRecord(pVal, item, router) {
             router.push({
-                name: '/lists/mails/:rId/:rName',
+                name: '/lists/email-messages/:rId/:rName',
                 params: {
                     rId: pVal,
                     rName: pVal,
