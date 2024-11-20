@@ -65,7 +65,11 @@ const linksList = computed(() => {
     {
       title: 'Users',
       route: '/lists/users',
-    }
+    },
+    {
+      title: 'Mails',
+      route: '/lists/mails',
+    },
   ];
 
 

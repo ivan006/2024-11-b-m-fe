@@ -50,7 +50,25 @@ const routes = [
               breadcrumbParentName: '/lists/users',
               requiresAuth: false,
             },
-          }
+          },
+          {
+            path: '/lists/mails',
+            name: '/lists/mails',
+            component: () => import('src/controllers/lists/mails/MailListController.vue'),
+            meta: {
+              breadcrumbName: 'Mails',
+              breadcrumbParentName: '',
+            },
+          },
+          {
+            path: '/lists/mails/:rId/:rName',
+            name: '/lists/mails/:rId/:rName',
+            component: () => import('src/controllers/lists/mails/MailReadController.vue'),
+            meta: {
+              breadcrumbName: ':rName',
+              breadcrumbParentName: '/lists/mails',
+            },
+          },
         ],
         meta: { requiresAuth: false }
       }
