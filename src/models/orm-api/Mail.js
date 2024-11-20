@@ -37,14 +37,16 @@ export default class Mail extends MyBaseModel {
     static fieldsMetadata = {
         'id': {},
             'recipient_id': { linkablesRule: () => { return {} } },
-            'email_body': {},
+            'email_body': {
+              usageType: 'htmlField'
+            },
             'created_at': {},
             'updated_at': {}
     };
 
     static fields() {
         return {
-            'id': this.attr(''),
+            'id': this.attr('').nullable(),
             'recipient_id': this.attr(''),
             'email_body': this.attr(''),
             'created_at': this.attr('').nullable(),

@@ -7,7 +7,7 @@ export default class User extends MyBaseModel {
   static entityUrl = '/api/users';
   static primaryKey = 'id';
   static entityHumanName = 'User';
-  static titleKey = 'name';
+  static titleKey = 'email';
 
   static openRecord(pVal, item, router) {
     router.push({
