@@ -14,7 +14,6 @@
                 label="Full Name"
                 :error="!!errors.name"
                 :error-message="errors.name"
-                :rules="[val => !!val || 'Field is required']"
                 outlined
                 dense
                 class="q-mb-sm"
