@@ -1,5 +1,6 @@
 import MyBaseModel from 'src/models/helpers/MyBaseModel';
 import VueCookies from 'vue-cookies';
+import Mail from "src/models/orm-api/Mail";
 
 export default class User extends MyBaseModel {
   static entity = 'user';
@@ -56,21 +57,32 @@ export default class User extends MyBaseModel {
         return currentTimestamp
       }
     },
-    
+    'company_name': {},
+    'first_name': {},
+    'last_name': {},
+    'mobile_number': {},
+    'profile_photo': {}
+
   };
 
   static fields() {
     return {
       'id': this.attr('').nullable(),
-      'old_id': this.attr('').nullable(),
-      'name': this.attr(''),
-      // 'email': this.attr('').nullable(),
+      // 'old_id': this.attr('').nullable(),
+      // 'name': this.attr('').nullable(),
+      'email': this.attr('').nullable(),
       // 'email_verified_at': this.attr('').nullable(),
       // 'password': this.attr('').nullable(),
       // 'status': this.attr('').nullable(),
       // 'remember_token': this.attr('').nullable(),
+      'company_name': this.attr('').nullable(),
+      'first_name': this.attr('').nullable(),
+      'last_name': this.attr('').nullable(),
+      'mobile_number': this.attr('').nullable(),
+      'profile_photo': this.attr('').nullable(),
       'created_at': this.attr('').nullable(),
       'updated_at': this.attr('').nullable(),
+      'mails': this.hasMany(Mail, 'recipient_id')
     };
   }
 
